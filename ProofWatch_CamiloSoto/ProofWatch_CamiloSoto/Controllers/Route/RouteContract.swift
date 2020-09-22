@@ -7,10 +7,11 @@
 //
 
 import Foundation
-
+import MapKit
 
 protocol RouteContractView {
-    
+    func showDistance(distance: String)
+    func showRoute(locations: [CLLocationCoordinate2D])
 }
 
 protocol RouteContractPresenter {
@@ -18,9 +19,11 @@ protocol RouteContractPresenter {
 }
 
 protocol RouteContractInteractor {
+    func loadRoute()
     func setCallback(callback: RouteContractCallback)
 }
 
 protocol RouteContractCallback {
-    
+    func returnDistance(distance: String)
+    func returnLocations(locations: [CLLocationCoordinate2D])
 }

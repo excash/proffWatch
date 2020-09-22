@@ -59,11 +59,70 @@
                     <connections>
                         <outlet property="btnStart" destination="xWl-BG-zn0" id="Eba-3O-w8q"/>
                         <outlet property="map" destination="Y2c-O5-bo1" id="zgQ-Jz-LPU"/>
+                        <segue destination="lN7-WB-kw0" kind="presentation" identifier="toRouteDetail" modalPresentationStyle="fullScreen" id="pp8-6h-cdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Route Controller-->
+        <scene sceneID="oIu-PU-wYq">
+            <objects>
+                <viewController id="lN7-WB-kw0" customClass="RouteController" customModule="ProofWatch_CamiloSoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p8V-iu-msk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C12-jd-5TI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Recorrido realizado" id="J56-2L-JPR">
+                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="tbY-Fd-N3C">
+                                            <connections>
+                                                <action selector="back:" destination="lN7-WB-kw0" id="DWt-0G-YoL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distancia Recorrida:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqi-X8-xcU">
+                                <rect key="frame" x="20" y="103" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N3t-yp-dTV">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C12-jd-5TI" firstAttribute="leading" secondItem="NcW-Rv-sVr" secondAttribute="leading" id="3dN-Ho-UcG"/>
+                            <constraint firstItem="N3t-yp-dTV" firstAttribute="leading" secondItem="NcW-Rv-sVr" secondAttribute="leading" id="4JC-9d-XaQ"/>
+                            <constraint firstItem="rqi-X8-xcU" firstAttribute="top" secondItem="C12-jd-5TI" secondAttribute="bottom" constant="15" id="8Zo-mG-c39"/>
+                            <constraint firstItem="N3t-yp-dTV" firstAttribute="top" secondItem="rqi-X8-xcU" secondAttribute="bottom" constant="20" id="Emv-af-Nx4"/>
+                            <constraint firstItem="C12-jd-5TI" firstAttribute="top" secondItem="NcW-Rv-sVr" secondAttribute="top" id="Sac-A8-skj"/>
+                            <constraint firstItem="N3t-yp-dTV" firstAttribute="trailing" secondItem="NcW-Rv-sVr" secondAttribute="trailing" id="UWd-Zx-sRV"/>
+                            <constraint firstItem="C12-jd-5TI" firstAttribute="trailing" secondItem="NcW-Rv-sVr" secondAttribute="trailing" id="h4V-pA-1nb"/>
+                            <constraint firstItem="NcW-Rv-sVr" firstAttribute="trailing" secondItem="rqi-X8-xcU" secondAttribute="trailing" constant="20" id="lNx-Ft-5po"/>
+                            <constraint firstItem="rqi-X8-xcU" firstAttribute="leading" secondItem="NcW-Rv-sVr" secondAttribute="leading" constant="20" id="sLM-O9-SKW"/>
+                            <constraint firstAttribute="bottom" secondItem="N3t-yp-dTV" secondAttribute="bottom" id="uea-1P-SHV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NcW-Rv-sVr"/>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="N3t-yp-dTV" id="cA4-p6-IbW"/>
+                        <outlet property="textDistance" destination="rqi-X8-xcU" id="km7-hn-GGp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sF-pU-KS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>

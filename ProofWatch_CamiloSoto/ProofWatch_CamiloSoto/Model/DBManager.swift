@@ -9,6 +9,7 @@
 import UIKit
 import GRDB
 
+///Clase para el manejo de la Base de Datos
 class DBManager {
     
     //MARK: Variables

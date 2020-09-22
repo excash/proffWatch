@@ -9,7 +9,7 @@
 import Foundation
 import GRDB
 
-///Clase de la tabla Alarmas
+///Clase de la tabla Coordenadas
 class LocationDao{
     
     //MARK: Variables

@@ -9,7 +9,7 @@
 import Foundation
 import GRDB
 
-///Clase del objeto de Alarma
+///Clase del objeto de Coordenadas
 class LocationDB: Record{
     
     //MARK: Variables

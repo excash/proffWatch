@@ -18,6 +18,7 @@ class LocationController: UIViewController, LocationContractView {
     
     var presenter: LocationContractPresenter?
     var stateRoute: StateRoute?
+    var annotation = MKPointAnnotation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,34 +30,29 @@ class LocationController: UIViewController, LocationContractView {
     
     // View
     func showActualPosition(location: CLLocationCoordinate2D) {
-        removeAnnotations()
         updatePosition(location: location)
     }
     
+    //Lllamado a la pantalla que muestra el recorrido completo
     func showAllRoute() {
         self.stateRoute = StateRoute.start
+        btnStart.setTitle("Iniciar Recorrido", for: .normal)
+        btnStart.setTitleColor(UIColor.blue, for: .normal)
+        performSegue(withIdentifier: "toRouteDetail", sender: self)
     }
     
+    //Actualización de la posición actual en la cola
     private func updatePosition(location: CLLocationCoordinate2D){
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
         map.setRegion(region, animated: true)
        
-        
-        let annotation = MKPointAnnotation()
         annotation.coordinate = location
         annotation.title = "Mi posición"
         map.addAnnotation(annotation)
     }
     
-    private func removeAnnotations(){
-        let annotations = map.annotations
-        guard annotations.count > 0 else { return }
-        for annotation in annotations {
-          map.removeAnnotation(annotation)
-        }
-    }
-
+    //Accion para el boton de inicio de recorrido
     @IBAction func start(_ sender: UIButton) {
         
         presenter?.startRoute(state: stateRoute!)

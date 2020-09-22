@@ -7,3 +7,31 @@
 //
 
 import Foundation
+import MapKit
+
+class RoutePresenter: RouteContractPresenter, RouteContractCallback {
+    
+    var view: RouteContractView?
+    var interactor: RouteContractInteractor?
+    
+    //Inicalización del Presentador
+    init(view: RouteContractView, interactor: RouteContractInteractor) {
+        self.view = view
+        self.interactor = interactor
+        self.interactor?.setCallback(callback: self)
+        self.interactor?.loadRoute()
+    }
+    
+    
+    //MARK: Callback
+    func returnDistance(distance: String) {
+        self.view?.showDistance(distance: distance)
+    }
+    
+    func returnLocations(locations: [CLLocationCoordinate2D]) {
+        self.view?.showRoute(locations: locations)
+    }
+    
+    
+    
+}
