@@ -11,19 +11,21 @@ import MapKit
 
 protocol LocationContractView {
     func showActualPosition(location: CLLocationCoordinate2D)
+    func showAllRoute()
 }
 
 protocol LocationContractPresenter {
-    func startRoute()
+    func startRoute(state: StateRoute)
 }
 
 protocol LocationContractInteractor {
     func createDB()
-    func insertLocations()
-    func startRoute()
+    func gpsDataCollector()
+    func publisher(state: StateRoute)
     func setCallback(callback: LocationContractCallback)
 }
 
 protocol LocationContractCallback {
-    func actualPosition(position: LocationDB)
+    func actualPosition(location: LocationDB)
+    func finishRoute()
 }

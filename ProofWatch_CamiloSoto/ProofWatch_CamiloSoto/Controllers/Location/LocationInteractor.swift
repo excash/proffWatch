@@ -8,25 +8,33 @@
 
 import Foundation
 
+enum StateRoute {
+    case start
+    case restart
+    case pause
+    case finish
+}
 
 class LocationInteractor: LocationContractInteractor{
     
     var callback: LocationContractCallback?
     var listPositions = [LocationDB]()
     var count = 0
-    var isFinished = false
+    var state: StateRoute?
     
     func createDB() {
         try! LocationDao.create()
     }
     
-    func insertLocations() {
+    func gpsDataCollector() {
         if let filepath = Bundle.main.path(forResource: "coordenadas", ofType: "txt") {
             do {
-                try! LocationDao.cleanTable()
                 
                 let data = try String(contentsOfFile: filepath)
                 let listLocations = data.components(separatedBy: .newlines)
+                
+                guard listLocations.count > 0 else { return }
+                try! LocationDao.cleanTable()
                 
                 for (index, value) in listLocations.enumerated(){
                     let location = value.components(separatedBy: ", ")
@@ -46,9 +54,24 @@ class LocationInteractor: LocationContractInteractor{
         }
     }
     
-    func startRoute() {
-        self.count = 0
-        repeatLoop()
+    func publisher(state: StateRoute) {
+        self.state = state
+        
+        switch state {
+            
+        case StateRoute.start:
+            self.count = 0
+            repeatLoop()
+            break
+            
+        case StateRoute.restart:
+            repeatLoop()
+            break
+            
+        default:
+            break
+        }
+        
     }
     
     func setCallback(callback: LocationContractCallback) {
@@ -56,7 +79,7 @@ class LocationInteractor: LocationContractInteractor{
     }
     
     private func repeatLoop(){
-        if !isFinished{
+        if state == StateRoute.start || state == StateRoute.restart{
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1){
                 self.updateLocation()
                 self.repeatLoop()
@@ -66,11 +89,13 @@ class LocationInteractor: LocationContractInteractor{
     
     private func updateLocation(){
         guard count < listPositions.count else {
-            self.isFinished = true
-            print("Finalizo el recorrido!!!\n")
+            self.state = StateRoute.finish
+            callback?.finishRoute()
             return
         }
-        callback?.actualPosition(position: self.listPositions[count])
+        let location = Queries.getLocationForPosition(position: count)
+        guard location != nil else { return }
+        callback?.actualPosition(location: location!)
         self.count += 1
     }
     

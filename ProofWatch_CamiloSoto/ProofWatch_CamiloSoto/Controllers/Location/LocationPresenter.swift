@@ -19,18 +19,22 @@ class LocationPresenter: LocationContractPresenter, LocationContractCallback{
         self.interactor = interactor
         self.interactor?.setCallback(callback: self)
         self.interactor?.createDB()
-        self.interactor?.insertLocations()
+        self.interactor?.gpsDataCollector()
     }
     
     // Presenter
-    func startRoute() {
-        self.interactor?.startRoute()
+    func startRoute(state: StateRoute) {
+        self.interactor?.publisher(state: state)
     }
     
     // Location
-    func actualPosition(position: LocationDB) {
-        let location = CLLocationCoordinate2D(latitude: position.latitude ?? 4, longitude: position.longitude ?? -74)
+    func actualPosition(location: LocationDB) {
+        let location = CLLocationCoordinate2D(latitude: location.latitude ?? 4, longitude: location.longitude ?? -74)
         self.view?.showActualPosition(location: location)
+    }
+    
+    func finishRoute() {
+        self.view?.showAllRoute()
     }
     
     
