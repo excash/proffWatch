@@ -1,24 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Location Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LocationController" customModule="ProofWatch_CamiloSoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dU4-6x-MBk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="p2u-9F-8B0"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Ubicación Actual" id="Z3k-sF-Cb4"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWl-BG-zn0">
+                                <rect key="frame" x="29" y="811" width="356" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Iniciar Recorrido"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIM-Bb-0j5"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-O5-bo1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="703"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dU4-6x-MBk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0YI-WE-LKT"/>
+                            <constraint firstItem="dU4-6x-MBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3T2-XI-8hP"/>
+                            <constraint firstItem="Y2c-O5-bo1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4vi-GQ-iKc"/>
+                            <constraint firstItem="dU4-6x-MBk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5w9-VJ-f6S"/>
+                            <constraint firstItem="Y2c-O5-bo1" firstAttribute="top" secondItem="dU4-6x-MBk" secondAttribute="bottom" id="FTx-h7-ueY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xWl-BG-zn0" secondAttribute="bottom" constant="15" id="XVb-zF-ycv"/>
+                            <constraint firstItem="xWl-BG-zn0" firstAttribute="top" secondItem="Y2c-O5-bo1" secondAttribute="bottom" constant="20" id="cjY-Zh-L6N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xWl-BG-zn0" secondAttribute="trailing" constant="29" id="cnf-Ut-Qd8"/>
+                            <constraint firstItem="xWl-BG-zn0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="dlb-kr-BiR"/>
+                            <constraint firstItem="Y2c-O5-bo1" firstAttribute="top" secondItem="dU4-6x-MBk" secondAttribute="bottom" id="tUU-MK-MSV"/>
+                            <constraint firstItem="Y2c-O5-bo1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wmW-t7-Poy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnStart" destination="xWl-BG-zn0" id="Eba-3O-w8q"/>
+                        <outlet property="map" destination="Y2c-O5-bo1" id="zgQ-Jz-LPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

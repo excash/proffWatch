@@ -8,22 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1197D15C2519827600FD26D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D15B2519827600FD26D5 /* AppDelegate.swift */; };
-		1197D15E2519827600FD26D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D15D2519827600FD26D5 /* SceneDelegate.swift */; };
-		1197D1602519827600FD26D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D15F2519827600FD26D5 /* ViewController.swift */; };
+		1197D1602519827600FD26D5 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D15F2519827600FD26D5 /* LocationController.swift */; };
 		1197D1632519827600FD26D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1197D1612519827600FD26D5 /* Main.storyboard */; };
 		1197D1652519827800FD26D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1197D1642519827800FD26D5 /* Assets.xcassets */; };
 		1197D1682519827800FD26D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1197D1662519827800FD26D5 /* LaunchScreen.storyboard */; };
 		1197D17125198E2300FD26D5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D17025198E2300FD26D5 /* DBManager.swift */; };
 		1197D17325198E6B00FD26D5 /* LocationDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D17225198E6B00FD26D5 /* LocationDao.swift */; };
 		1197D17525198EFE00FD26D5 /* LocationDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D17425198EFE00FD26D5 /* LocationDB.swift */; };
+		1197D1782519909900FD26D5 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1772519909900FD26D5 /* Queries.swift */; };
+		1197D17D251991E700FD26D5 /* RouteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D17C251991E700FD26D5 /* RouteController.swift */; };
+		1197D17F2519921200FD26D5 /* LocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D17E2519921200FD26D5 /* LocationPresenter.swift */; };
+		1197D1812519921D00FD26D5 /* LocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1802519921D00FD26D5 /* LocationInteractor.swift */; };
+		1197D1832519922700FD26D5 /* LocationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1822519922700FD26D5 /* LocationContract.swift */; };
+		1197D1852519923200FD26D5 /* RoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1842519923200FD26D5 /* RoutePresenter.swift */; };
+		1197D1872519923C00FD26D5 /* RouteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1862519923C00FD26D5 /* RouteInteractor.swift */; };
+		1197D1892519924C00FD26D5 /* RouteContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197D1882519924C00FD26D5 /* RouteContract.swift */; };
+		1197D18B2519958700FD26D5 /* coordenadas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1197D18A2519958700FD26D5 /* coordenadas.txt */; };
 		92656C704B0CAC978DFC0BC9 /* Pods_ProofWatch_CamiloSoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DAC515136F62E893466F95 /* Pods_ProofWatch_CamiloSoto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1197D1582519827600FD26D5 /* ProofWatch_CamiloSoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProofWatch_CamiloSoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1197D15B2519827600FD26D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1197D15D2519827600FD26D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1197D15F2519827600FD26D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1197D15F2519827600FD26D5 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		1197D1622519827600FD26D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1197D1642519827800FD26D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1197D1672519827800FD26D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +38,15 @@
 		1197D17025198E2300FD26D5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		1197D17225198E6B00FD26D5 /* LocationDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDao.swift; sourceTree = "<group>"; };
 		1197D17425198EFE00FD26D5 /* LocationDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDB.swift; sourceTree = "<group>"; };
+		1197D1772519909900FD26D5 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
+		1197D17C251991E700FD26D5 /* RouteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteController.swift; sourceTree = "<group>"; };
+		1197D17E2519921200FD26D5 /* LocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresenter.swift; sourceTree = "<group>"; };
+		1197D1802519921D00FD26D5 /* LocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInteractor.swift; sourceTree = "<group>"; };
+		1197D1822519922700FD26D5 /* LocationContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationContract.swift; sourceTree = "<group>"; };
+		1197D1842519923200FD26D5 /* RoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePresenter.swift; sourceTree = "<group>"; };
+		1197D1862519923C00FD26D5 /* RouteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInteractor.swift; sourceTree = "<group>"; };
+		1197D1882519924C00FD26D5 /* RouteContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContract.swift; sourceTree = "<group>"; };
+		1197D18A2519958700FD26D5 /* coordenadas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coordenadas.txt; sourceTree = SOURCE_ROOT; };
 		8DBB8C3BF509980AC0FBF203 /* Pods-ProofWatch_CamiloSoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProofWatch_CamiloSoto.release.xcconfig"; path = "Target Support Files/Pods-ProofWatch_CamiloSoto/Pods-ProofWatch_CamiloSoto.release.xcconfig"; sourceTree = "<group>"; };
 		A5DAC515136F62E893466F95 /* Pods_ProofWatch_CamiloSoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProofWatch_CamiloSoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB3B85D899FF774EEA18123 /* Pods-ProofWatch_CamiloSoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProofWatch_CamiloSoto.debug.xcconfig"; path = "Target Support Files/Pods-ProofWatch_CamiloSoto/Pods-ProofWatch_CamiloSoto.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,10 +85,10 @@
 		1197D15A2519827600FD26D5 /* ProofWatch_CamiloSoto */ = {
 			isa = PBXGroup;
 			children = (
+				1197D18A2519958700FD26D5 /* coordenadas.txt */,
+				1197D1762519905E00FD26D5 /* Controllers */,
 				1197D16F25198E0F00FD26D5 /* Model */,
 				1197D15B2519827600FD26D5 /* AppDelegate.swift */,
-				1197D15D2519827600FD26D5 /* SceneDelegate.swift */,
-				1197D15F2519827600FD26D5 /* ViewController.swift */,
 				1197D1612519827600FD26D5 /* Main.storyboard */,
 				1197D1642519827800FD26D5 /* Assets.xcassets */,
 				1197D1662519827800FD26D5 /* LaunchScreen.storyboard */,
@@ -87,8 +103,40 @@
 				1197D17025198E2300FD26D5 /* DBManager.swift */,
 				1197D17225198E6B00FD26D5 /* LocationDao.swift */,
 				1197D17425198EFE00FD26D5 /* LocationDB.swift */,
+				1197D1772519909900FD26D5 /* Queries.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1197D1762519905E00FD26D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1197D17B251991CF00FD26D5 /* Route */,
+				1197D1792519918E00FD26D5 /* Location */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1197D1792519918E00FD26D5 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1197D15F2519827600FD26D5 /* LocationController.swift */,
+				1197D17E2519921200FD26D5 /* LocationPresenter.swift */,
+				1197D1802519921D00FD26D5 /* LocationInteractor.swift */,
+				1197D1822519922700FD26D5 /* LocationContract.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		1197D17B251991CF00FD26D5 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				1197D17C251991E700FD26D5 /* RouteController.swift */,
+				1197D1842519923200FD26D5 /* RoutePresenter.swift */,
+				1197D1862519923C00FD26D5 /* RouteInteractor.swift */,
+				1197D1882519924C00FD26D5 /* RouteContract.swift */,
+			);
+			path = Route;
 			sourceTree = "<group>";
 		};
 		5A620C988BABDDFEC4CB9FD9 /* Frameworks */ = {
@@ -168,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1197D18B2519958700FD26D5 /* coordenadas.txt in Resources */,
 				1197D1682519827800FD26D5 /* LaunchScreen.storyboard in Resources */,
 				1197D1652519827800FD26D5 /* Assets.xcassets in Resources */,
 				1197D1632519827600FD26D5 /* Main.storyboard in Resources */,
@@ -223,12 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1197D17D251991E700FD26D5 /* RouteController.swift in Sources */,
 				1197D17325198E6B00FD26D5 /* LocationDao.swift in Sources */,
-				1197D1602519827600FD26D5 /* ViewController.swift in Sources */,
+				1197D1602519827600FD26D5 /* LocationController.swift in Sources */,
+				1197D1852519923200FD26D5 /* RoutePresenter.swift in Sources */,
+				1197D17F2519921200FD26D5 /* LocationPresenter.swift in Sources */,
+				1197D1782519909900FD26D5 /* Queries.swift in Sources */,
+				1197D1872519923C00FD26D5 /* RouteInteractor.swift in Sources */,
 				1197D15C2519827600FD26D5 /* AppDelegate.swift in Sources */,
-				1197D15E2519827600FD26D5 /* SceneDelegate.swift in Sources */,
 				1197D17525198EFE00FD26D5 /* LocationDB.swift in Sources */,
 				1197D17125198E2300FD26D5 /* DBManager.swift in Sources */,
+				1197D1832519922700FD26D5 /* LocationContract.swift in Sources */,
+				1197D1892519924C00FD26D5 /* RouteContract.swift in Sources */,
+				1197D1812519921D00FD26D5 /* LocationInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
